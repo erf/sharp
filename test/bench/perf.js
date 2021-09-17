@@ -9,10 +9,10 @@ const assert = require('assert');
 const Benchmark = require('benchmark');
 
 // Contenders
-const sharp = require('../../');
+const sharp = require('sharp');
 const gm = require('gm');
 const imagemagick = require('imagemagick');
-const mapnik = require('mapnik');
+//const mapnik = require('mapnik');
 const jimp = require('jimp');
 const squoosh = require('@squoosh/lib');
 
@@ -137,6 +137,7 @@ async.series({
       }
     });
     // mapnik
+    /*
     jpegSuite.add('mapnik-file-file', {
       defer: true,
       fn: function (deferred) {
@@ -168,6 +169,7 @@ async.series({
         });
       }
     });
+    */
     // imagemagick
     jpegSuite.add('imagemagick-file-file', {
       defer: true,
@@ -681,6 +683,7 @@ async.series({
       }
     });
     // mapnik
+    /*
     pngSuite.add('mapnik-file-file', {
       defer: true,
       fn: function (deferred) {
@@ -726,6 +729,7 @@ async.series({
         });
       }
     });
+    */
     // imagemagick
     pngSuite.add('imagemagick-file-file', {
       defer: true,
