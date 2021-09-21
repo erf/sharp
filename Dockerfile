@@ -11,7 +11,7 @@ RUN apk add vim
 
 WORKDIR /app
 COPY package.json .
-RUN npm install
+RUN npm install --arch=arm64 --platform=linuxmusl
 COPY . ./
 
 WORKDIR /app/test/bench
