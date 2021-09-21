@@ -9,7 +9,7 @@ const assert = require('assert');
 const Benchmark = require('benchmark');
 
 // Contenders
-const sharp = require('sharp');
+const sharp = require('../../');
 const gm = require('gm');
 const imagemagick = require('imagemagick');
 //const mapnik = require('mapnik');

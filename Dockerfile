@@ -6,15 +6,15 @@ RUN apk add imagemagick-dev
 RUN apk add graphicsmagick-dev
 #RUN apk add mapnik-dev
 
-# copy sharp folder first so we can do relative import of sharp in bench.js ?
-#WORKDIR /sharp
-#COPY ../../package.json .
-#RUN npm install
-#COPY ../../ .
+# for inspecting
+RUN apk add vim
 
-WORKDIR /sharp
+WORKDIR /app
 COPY package.json .
 RUN npm install
-COPY . .
+COPY . ./
+
+WORKDIR /app/test/bench
+RUN npm install
 
 CMD ["node", "perf"]
